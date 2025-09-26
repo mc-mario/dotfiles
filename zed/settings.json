@@ -7,9 +7,37 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "terminal": {
+  "outline_panel": {
     "dock": "right"
   },
+  "terminal": {
+    "dock": "bottom",
+    "line_height": "standard",
+    "font_size": 14,
+    "blinking": "on",
+    "copy_on_select": true,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+
+  "title_bar": {
+    "show_menus": true,
+    "show_branch_icon": true,
+    "show_user_picture": false
+  },
+
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left",
+    "default_width": 240
+  },
+
+  "use_system_path_prompts": false,
+
+  "bottom_dock_layout": "full",
+  "resize_all_panels_in_dock": ["left", "right"],
+
   "features": {},
   "search": {},
   "tabs": {
@@ -37,11 +65,29 @@
       "milliseconds": 1000
     }
   },
+
   "minimap": { "show": "auto" },
+
+  "use_system_window_tabs": true,
+
+  "git": {
+    "branch_picker": {}
+  },
 
   "languages": {
     "Python": {
       "language_servers": ["basedpyright", "!pyright"]
-    }
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JSON": {}
   }
 }
