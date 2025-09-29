@@ -22,5 +22,22 @@
     "bindings": {
       "cmd-shift-o": "workspace::Open"
     }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-2": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-2": null
+    }
+  },
+  {
+    "bindings": {
+      "cmd-2": "git_panel::ToggleFocus"
+    }
   }
 ]
