@@ -1,7 +1,30 @@
 {
+  "ssh_connections": [
+    {
+      "host": "192.168.10.213",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/srv/dev-disk-by-uuid-99e59467-25d2-4a81-93d8-4be4ac17aadf/docker/docker-app/./"
+          ]
+        }
+      ]
+    }
+  ],
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
+      "milliseconds": 3000
     }
   },
   "base_keymap": "JetBrains",
@@ -83,5 +106,12 @@
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "use_system_window_tabs": true,
-  "vertical_scroll_margin": 10
+  "vertical_scroll_margin": 10,
+
+  "agent_servers": {
+    "OpenCode": {
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  }
 }
