@@ -32,7 +32,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-2": null
+      "cmd-2": null,
+      "cmd-t": "terminal_panel::Toggle"
     }
   },
   {
