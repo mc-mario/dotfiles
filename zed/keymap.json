@@ -2,6 +2,14 @@
   {
     "context": "Workspace",
     "bindings": {
+      "cmd-o": "file_finder::Toggle"
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-o": "file_finder::Toggle"
       // "shift shift": "file_finder::Toggle"
     }
   },
@@ -32,13 +40,31 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-2": null,
-      "cmd-t": "terminal_panel::Toggle"
+      "cmd-2": null
     }
   },
   {
     "bindings": {
       "cmd-2": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-3": "agent::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-n": "workspace::NewTerminal",
+      "cmd-t": null
     }
   }
 ]
