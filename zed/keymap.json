@@ -1,29 +1,35 @@
+// Zed keymap
+//
+// Docs: https://zed.dev/docs/key-bindings
 [
+  // Disable defaults we are remapping
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-o": "file_finder::Toggle"
-      // "shift shift": "file_finder::Toggle"
+      "cmd-1": null,
+      "cmd-2": null,
+      "cmd-3": null,
+      "cmd-4": null,
+      "cmd-t": null
     }
   },
   {
-    "context": "Terminal",
+    "context": "Workspace",
     "bindings": {
-      "cmd-o": "file_finder::Toggle"
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
+      //"shift shift": "file_finder::Toggle"
     }
   },
   {
     "context": "Editor",
     "bindings": {
       "cmd-p": "editor::ShowCompletions",
-      "cmd-o": "file_finder::Toggle"
+      "cmd-o": "file_finder::Toggle",
+      "alt alt-down": [
+        "editor::AddSelectionBelow",
+        {
+          "skip_soft_wrap": true
+        }
+      ],
     }
   },
   {
@@ -32,38 +38,62 @@
     }
   },
   {
-    "context": "Pane",
-    "bindings": {
-      "cmd-2": null
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
-      "cmd-2": null
+      "cmd-e": "tab_switcher::Toggle",
+      "cmd-shift-a": "command_palette::Toggle"
     }
   },
   {
+    "context": "Workspace && !ProjectPanel",
+    "bindings": {
+      "cmd-1": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "cmd-1": "workspace::CloseActiveDock"
+    }
+  },
+  // CMD+2 git panel: open/focus, then close
+  {
+    "context": "Workspace && !GitPanel",
     "bindings": {
       "cmd-2": "git_panel::ToggleFocus"
     }
   },
   {
-    "context": "Workspace",
+    "context": "GitPanel",
+    "bindings": {
+      "cmd-2": "workspace::CloseActiveDock"
+    }
+  },
+  // CMD+3 agent panel: open/focus, then close
+  {
+    "context": "Workspace && !AgentPanel && !AcpThread",
     "bindings": {
       "cmd-3": "agent::ToggleFocus"
     }
   },
   {
-    "context": "Workspace",
+    "context": "AgentPanel || AcpThread",
     "bindings": {
-      "cmd-t": "terminal_panel::ToggleFocus"
+      "cmd-3": "workspace::CloseActiveDock"
+    }
+  },
+  // CMD+4 terminal panel: open/focus, then close
+  {
+    "context": "Workspace && !Terminal",
+    "bindings": {
+      "cmd-4": "terminal_panel::Toggle",
+      "cmd-t": "terminal_panel::Toggle"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "cmd-n": "workspace::NewTerminal",
+      "cmd-4": "terminal_panel::Toggle",
       "cmd-t": null
     }
   }
