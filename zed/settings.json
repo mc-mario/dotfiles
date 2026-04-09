@@ -1,4 +1,36 @@
 {
+  "which_key": {
+    "enabled": false
+  },
+  "prettier": {
+    "allowed": false
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+    },
+    "default_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.5",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      //"source": "extension",
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "ctx7sk-ba05f009-e7b5-4f47-be64-75f2babb3b63",
+      },
+    },
+  },
   "ssh_connections": [
     {
       "host": "192.168.10.213",
@@ -7,25 +39,25 @@
       "projects": [
         {
           "paths": [
-            "/srv/dev-disk-by-uuid-99e59467-25d2-4a81-93d8-4be4ac17aadf/docker/docker-app/./"
-          ]
-        }
-      ]
-    }
+            "/srv/dev-disk-by-uuid-99e59467-25d2-4a81-93d8-4be4ac17aadf/docker/docker-app/./",
+          ],
+        },
+      ],
+    },
   ],
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
       "proxy": null,
       "proxy_no_verify": null,
-      "enterprise_uri": null
+      "enterprise_uri": null,
     },
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 3000
-    }
+      "milliseconds": 3000,
+    },
   },
   "base_keymap": "JetBrains",
   "bottom_dock_layout": "full",
@@ -33,59 +65,54 @@
   "collaboration_panel": {
     "button": false,
     "dock": "left",
-    "default_width": 240
+    "default_width": 240,
   },
   "features": {},
   "git": {
     "branch_picker": {
-      "show_author_name": true
+      "show_author_name": true,
     },
-    "hunk_style": "staged_hollow"
+    "hunk_style": "staged_hollow",
   },
   "hover_popover_delay": 100,
-  "format_on_save": "on",
   "languages": {
     "Python": {
-      "language_servers": ["basedpyright", "!pyright"]
+      "preferred_line_length": 90,
+      "language_servers": ["ty", "!basedpyright", "!pyright"],
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
+      },
     },
     "TypeScript": {
-      "format_on_save": "on",
-      "formatter": {
-        "language_server": {
-          "name": "eslint"
-        }
-      },
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "TSX": {
-      "format_on_save": "on",
-      "formatter": {
-        "language_server": {
-          "name": "eslint"
-        }
-      },
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
-    "JSON": {}
+    "JSON": {},
   },
   "minimap": {
-    "show": "auto"
+    "show": "auto",
   },
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "preview_tabs": {
     "enable_preview_from_file_finder": true,
-    "enable_preview_from_code_navigation": true
   },
   "project_panel": {
     "dock": "left",
     "button": true,
-    "entry_spacing": "standard"
+    "entry_spacing": "standard",
   },
   "resize_all_panels_in_dock": ["left", "right"],
   "scroll_beyond_last_line": "vertical_scroll_margin",
@@ -93,7 +120,7 @@
   "tabs": {
     "git_status": true,
     "show_diagnostics": "errors",
-    "file_icons": true
+    "file_icons": true,
   },
   "terminal": {
     "dock": "bottom",
@@ -102,18 +129,24 @@
     "blinking": "on",
     "copy_on_select": true,
     "scrollbar": {
-      "show": "never"
-    }
+      "show": "never",
+    },
+    "detect_venv": {
+      "on": {
+        "directories": [".env", "env", ".venv", "venv"],
+        "activate_script": "default",
+      },
+    },
   },
   "theme": {
     "mode": "system",
-    "light": "Ayu Mirage",
-    "dark": "Ayu Mirage"
+    "light": "Catppuccin Macchiato (Blur) [Heavy]",
+    "dark": "Catppuccin Mocha (Blur) [Heavy]",
   },
   "title_bar": {
     "show_menus": true,
     "show_branch_icon": true,
-    "show_user_picture": false
+    "show_user_picture": false,
   },
   "ui_font_size": 16,
   "use_smartcase_search": true,
@@ -123,21 +156,10 @@
 
   "agent_servers": {
     "OpenCode": {
+      "favorite_models": ["zai-coding-plan/glm-5"],
       "type": "custom",
       "command": "opencode",
-      "args": ["acp"]
-    }
+      "args": ["acp"],
+    },
   },
-  "lsp": {
-    "eslint": {
-      "settings": {
-        "codeActionOnSave": {
-          "enable": true,
-          "mode": "all"
-        },
-        "format": true,
-        "validate": "on"
-      }
-    }
-  }
 }
