@@ -1,4 +1,12 @@
 {
+  "git_panel": {
+    "dock": "left"
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434"
+    }
+  },
   "which_key": {
     "enabled": false
   },
@@ -6,28 +14,29 @@
     "allowed": false
   },
   "agent": {
+    "dock": "right",
     "inline_assistant_model": {
       "provider": "openrouter",
       "model": "anthropic/claude-sonnet-4.5",
     },
     "default_model": {
-      "provider": "openrouter",
-      "model": "anthropic/claude-sonnet-4.5",
+      "enable_thinking": false,
+      "provider": "deepseek",
+      "model": "deepseek-chat",
     },
     "favorite_models": [],
     "model_parameters": [],
   },
   "icon_theme": {
-    "mode": "system",
+    "mode": "light",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
   "context_servers": {
     "mcp-server-context7": {
-      //"source": "extension",
       "enabled": true,
       "settings": {
-        "context7_api_key": "ctx7sk-ba05f009-e7b5-4f47-be64-75f2babb3b63",
+        "context7_api_key": "REDACTED",
       },
     },
   },
@@ -64,10 +73,9 @@
   "buffer_font_size": 15,
   "collaboration_panel": {
     "button": false,
-    "dock": "left",
+    "dock": "right",
     "default_width": 240,
   },
-  "features": {},
   "git": {
     "branch_picker": {
       "show_author_name": true,
@@ -76,9 +84,18 @@
   },
   "hover_popover_delay": 100,
   "languages": {
+    "YAML": {
+      "language_servers": [
+        "!yaml-language-server"
+      ]
+    },
     "Python": {
       "preferred_line_length": 90,
-      "language_servers": ["ty", "!basedpyright", "!pyright"],
+      "language_servers": [
+        "ty",
+        "!basedpyright",
+        "!pyright"
+      ],
       "code_actions_on_format": {
         "source.organizeImports.ruff": true,
       },
@@ -114,7 +131,10 @@
     "button": true,
     "entry_spacing": "standard",
   },
-  "resize_all_panels_in_dock": ["left", "right"],
+  "resize_all_panels_in_dock": [
+    "left",
+    "right"
+  ],
   "scroll_beyond_last_line": "vertical_scroll_margin",
   "search": {},
   "tabs": {
@@ -133,33 +153,39 @@
     },
     "detect_venv": {
       "on": {
-        "directories": [".env", "env", ".venv", "venv"],
+        "directories": [
+          ".env",
+          "env",
+          ".venv",
+          "venv"
+        ],
         "activate_script": "default",
       },
     },
   },
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Macchiato (Blur) [Heavy]",
-    "dark": "Catppuccin Mocha (Blur) [Heavy]",
+    "mode": "dark",
+    "light": "Snazzy Theme - blurred",
+    "dark": "Snazzy Theme - blurred",
   },
   "title_bar": {
+    "show_branch_status_icon": true,
     "show_menus": true,
-    "show_branch_icon": true,
     "show_user_picture": false,
   },
+  "minimum_split_diff_width": 200,
+  "diff_view_style": "split",
   "ui_font_size": 16,
   "use_smartcase_search": true,
   "use_system_path_prompts": false,
   "use_system_window_tabs": true,
   "vertical_scroll_margin": 10,
-
   "agent_servers": {
-    "OpenCode": {
-      "favorite_models": ["zai-coding-plan/glm-5"],
-      "type": "custom",
-      "command": "opencode",
-      "args": ["acp"],
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "bypassPermissions"
+      },
+      "type": "registry"
     },
   },
 }
