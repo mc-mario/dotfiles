@@ -48,11 +48,24 @@
       "projects": [
         {
           "paths": [
-            "/srv/dev-disk-by-uuid-99e59467-25d2-4a81-93d8-4be4ac17aadf/docker/docker-app/./",
-          ],
-        },
-      ],
+            "/srv/dev-disk-by-uuid-99e59467-25d2-4a81-93d8-4be4ac17aadf/docker/docker-app/./"
+          ]
+        }
+      ]
     },
+    {
+      "host": "100.65.191.116",
+      "username": "root",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/root"
+          ]
+        }
+      ],
+      "nickname": "OMV32"
+    }
   ],
   "edit_predictions": {
     "mode": "subtle",
